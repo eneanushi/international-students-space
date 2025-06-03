@@ -22,6 +22,16 @@ const Title = styled(motion.h1)`
   text-align: center;
   font-weight: 800;
   letter-spacing: -0.02em;
+
+  @media (max-width: 768px) {
+    font-size: 3rem;
+    margin-bottom: 2rem;
+  }
+
+  @media (max-width: 480px) {
+    font-size: 2.5rem;
+    margin-bottom: 1.5rem;
+  }
 `;
 
 const FeaturesGrid = styled.div`
@@ -31,6 +41,15 @@ const FeaturesGrid = styled.div`
   max-width: 1400px;
   margin: 0 auto;
   padding: 2rem;
+
+  @media (max-width: 1024px) {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  @media (max-width: 640px) {
+    grid-template-columns: 1fr;
+    padding: 1rem;
+  }
 `;
 
 const FeatureCard = styled(motion.div)`
@@ -45,6 +64,10 @@ const FeatureCard = styled(motion.div)`
   align-items: center;
   text-align: center;
   transition: all 0.3s ease;
+
+  @media (max-width: 640px) {
+    padding: 1.5rem;
+  }
 
   &:hover {
     transform: translateY(-10px);
@@ -72,6 +95,10 @@ const FeatureTitle = styled.h3`
   background: linear-gradient(45deg, #607afb, #FF94B4);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
+
+  @media (max-width: 640px) {
+    font-size: 1.25rem;
+  }
 `;
 
 const FeatureDescription = styled.p`
@@ -79,6 +106,11 @@ const FeatureDescription = styled.p`
   line-height: 1.6;
   color: rgba(255, 255, 255, 0.9);
   margin-bottom: 1.5rem;
+
+  @media (max-width: 640px) {
+    font-size: 0.9rem;
+    line-height: 1.5;
+  }
 `;
 
 const features = [

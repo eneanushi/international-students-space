@@ -7,10 +7,14 @@ const AboutContainer = styled.div`
   width: 100%;
   background: transparent;
   color: rgba(255, 255, 255, 0.87);
-  padding: 2rem;
+  padding: 1rem;
   position: relative;
   overflow: hidden;
   z-index: 1;
+
+  @media (max-width: 640px) {
+    padding: 0.5rem;
+  }
 `;
 
 const Section = styled(motion.section)`
@@ -24,6 +28,15 @@ const Section = styled(motion.section)`
   border-radius: 24px;
   border: 1px solid rgba(255, 255, 255, 0.1);
   box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+
+  @media (max-width: 768px) {
+    padding: 3rem 1.5rem;
+  }
+
+  @media (max-width: 640px) {
+    padding: 2rem 1rem;
+    border-radius: 16px;
+  }
 `;
 
 const Title = styled(motion.h1)`
@@ -35,6 +48,16 @@ const Title = styled(motion.h1)`
   text-align: center;
   font-weight: 800;
   letter-spacing: -0.02em;
+
+  @media (max-width: 768px) {
+    font-size: 3rem;
+    margin-bottom: 1.5rem;
+  }
+
+  @media (max-width: 480px) {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+  }
 `;
 
 const Subtitle = styled(motion.h2)`
@@ -44,6 +67,15 @@ const Subtitle = styled(motion.h2)`
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   font-weight: 700;
+
+  @media (max-width: 768px) {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+  }
+
+  @media (max-width: 480px) {
+    font-size: 1.75rem;
+  }
 `;
 
 const Text = styled(motion.p)`
@@ -52,6 +84,16 @@ const Text = styled(motion.p)`
   margin-bottom: 2rem;
   color: rgba(255, 255, 255, 0.9);
   text-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+
+  @media (max-width: 768px) {
+    font-size: 1.1rem;
+    line-height: 1.6;
+  }
+
+  @media (max-width: 480px) {
+    font-size: 1rem;
+    line-height: 1.5;
+  }
 `;
 
 const Highlight = styled.span`
@@ -70,6 +112,16 @@ const AIBuddy = styled(motion.div)`
   background-size: contain;
   z-index: 2;
   filter: drop-shadow(0 0 20px rgba(96, 122, 251, 0.3));
+
+  @media (max-width: 1024px) {
+    width: 150px;
+    height: 150px;
+    right: 1rem;
+  }
+
+  @media (max-width: 768px) {
+    display: none;
+  }
 `;
 
 const FloatingElement = styled(motion.div)`

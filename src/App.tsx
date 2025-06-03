@@ -29,7 +29,7 @@ function Home() {
 function App() {
   return (
     <Router>
-      <div className="relative h-screen w-full font-sans bg-black">
+      <div className="relative min-h-screen w-full font-sans bg-black">
         {/* Aurora background absolutely positioned and behind content */}
         <div className="absolute inset-0 w-full h-full z-0">
           <Aurora
@@ -40,9 +40,9 @@ function App() {
           />
         </div>
         {/* Main content above Aurora */}
-        <div className="relative flex flex-col h-full w-full max-w-[1920px] mx-auto z-10">
+        <div className="relative flex flex-col w-full max-w-[1920px] mx-auto z-10">
           <Header />
-          <main className="flex-1 w-full overflow-y-auto">
+          <main className="w-full">
             <Routes>
               <Route path="/" element={<Home />} />
               <Route path="/about" element={<About />} />

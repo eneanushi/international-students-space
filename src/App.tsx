@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import React from 'react'
 import { BrowserRouter as Router, Routes, Route, Link, useLocation } from 'react-router-dom'
 import './App.css'
 
@@ -10,6 +10,7 @@ import Subscribe from './components/Subscribe';
 import Aurora from './components/Aurora';
 import OpeningEffect from './components/OpeningEffect';
 import About from './components/About';
+import FeaturesPage from './components/FeaturesPage';
 
 function Home() {
   return (
@@ -45,6 +46,7 @@ function App() {
             <Routes>
               <Route path="/" element={<Home />} />
               <Route path="/about" element={<About />} />
+              <Route path="/features" element={<FeaturesPage />} />
             </Routes>
           </main>
         </div>

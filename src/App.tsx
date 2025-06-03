@@ -1,5 +1,4 @@
-import React from 'react'
-import { BrowserRouter as Router, Routes, Route, Link, useLocation } from 'react-router-dom'
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'
 import './App.css'
 
 import Header from './components/Header';
@@ -11,6 +10,7 @@ import Aurora from './components/Aurora';
 import OpeningEffect from './components/OpeningEffect';
 import About from './components/About';
 import FeaturesPage from './components/FeaturesPage';
+import Contact from './components/Contact';
 
 function Home() {
   return (
@@ -47,6 +47,7 @@ function App() {
               <Route path="/" element={<Home />} />
               <Route path="/about" element={<About />} />
               <Route path="/features" element={<FeaturesPage />} />
+              <Route path="/contact" element={<Contact />} />
             </Routes>
           </main>
         </div>

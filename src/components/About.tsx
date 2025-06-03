@@ -1,5 +1,5 @@
 import React, { useEffect, useRef } from 'react';
-import { motion, useScroll, useTransform } from 'framer-motion';
+import { motion, useScroll } from 'framer-motion';
 import styled from '@emotion/styled';
 
 const AboutContainer = styled.div`
@@ -81,17 +81,15 @@ const FloatingElement = styled(motion.div)`
 
 const About: React.FC = () => {
   const containerRef = useRef<HTMLDivElement>(null);
-  const { scrollYProgress } = useScroll({
+  useScroll({
     target: containerRef,
     offset: ["start start", "end end"]
   });
 
-  const y = useTransform(scrollYProgress, [0, 1], [0, -100]);
-
   useEffect(() => {
     // Add floating elements
     const elements = ['passport', 'document', 'globe'];
-    elements.forEach((element, index) => {
+    elements.forEach((element) => {
       const el = document.createElement('div');
       el.className = `floating-${element}`;
       el.style.background = `url('/${element}.png') no-repeat center center`;

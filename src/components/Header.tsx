@@ -22,7 +22,7 @@ export default function Header() {
             <Link to="/" className="text-white text-sm font-medium hover:text-[#607afb] transition-colors">Home</Link>
             <Link to="/about" className="text-white text-sm font-medium hover:text-[#607afb] transition-colors">About</Link>
             <Link to="/features" className="text-white text-sm font-medium hover:text-[#607afb] transition-colors">Features</Link>
-            <a href="#contact" className="text-white text-sm font-medium hover:text-[#607afb] transition-colors">Contact</a>
+            <Link to="/contact" className="text-white text-sm font-medium hover:text-[#607afb] transition-colors">Contact</Link>
             <button className="rounded-xl bg-[#607afb] px-6 h-10 text-sm font-bold text-white hover:bg-[#4a5fd9] transition-colors">
               I'm Interested
             </button>
@@ -50,7 +50,7 @@ export default function Header() {
               <Link to="/" className="block px-3 py-2 text-white text-sm font-medium hover:text-[#607afb] transition-colors">Home</Link>
               <Link to="/about" className="block px-3 py-2 text-white text-sm font-medium hover:text-[#607afb] transition-colors">About</Link>
               <Link to="/features" className="block px-3 py-2 text-white text-sm font-medium hover:text-[#607afb] transition-colors">Features</Link>
-              <a href="#contact" className="block px-3 py-2 text-white text-sm font-medium hover:text-[#607afb] transition-colors">Contact</a>
+              <Link to="/contact" className="block px-3 py-2 text-white text-sm font-medium hover:text-[#607afb] transition-colors">Contact</Link>
               <button className="w-full mt-2 rounded-xl bg-[#607afb] px-6 h-10 text-sm font-bold text-white hover:bg-[#4a5fd9] transition-colors">
                 I'm Interested
               </button>

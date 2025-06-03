@@ -11,6 +11,7 @@ import OpeningEffect from './components/OpeningEffect';
 import About from './components/About';
 import FeaturesPage from './components/FeaturesPage';
 import Contact from './components/Contact';
+import Footer from './components/Footer';
 
 function Home() {
   return (
@@ -29,7 +30,7 @@ function Home() {
 function App() {
   return (
     <Router>
-      <div className="relative min-h-screen w-full font-sans bg-black">
+      <div className="relative min-h-screen w-full font-sans bg-black flex flex-col overflow-hidden">
         {/* Aurora background absolutely positioned and behind content */}
         <div className="absolute inset-0 w-full h-full z-0">
           <Aurora
@@ -40,9 +41,9 @@ function App() {
           />
         </div>
         {/* Main content above Aurora */}
-        <div className="relative flex flex-col w-full max-w-[1920px] mx-auto z-10">
+        <div className="relative w-full max-w-[1920px] mx-auto z-10 flex flex-col min-h-screen">
           <Header />
-          <main className="w-full">
+          <main className="flex-1 overflow-y-auto">
             <Routes>
               <Route path="/" element={<Home />} />
               <Route path="/about" element={<About />} />
@@ -50,6 +51,7 @@ function App() {
               <Route path="/contact" element={<Contact />} />
             </Routes>
           </main>
+          <Footer />
         </div>
       </div>
     </Router>

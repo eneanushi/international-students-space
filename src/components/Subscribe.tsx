@@ -1,5 +1,3 @@
-import React from 'react';
-
 const Subscribe = () => {
   return (
     <div className="w-full px-4 sm:px-6 lg:px-8">

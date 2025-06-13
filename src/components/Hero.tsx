@@ -1,3 +1,5 @@
+import { Link } from 'react-router-dom';
+
 const Hero = () => {
   return (
     <div className="w-full px-4 sm:px-6 lg:px-8">
@@ -13,12 +15,20 @@ const Hero = () => {
               </p>
             </div>
             <div className="flex flex-col sm:flex-row gap-3">
-              <button className="flex items-center justify-center rounded-xl bg-[#607afb] px-6 h-10 text-sm font-bold text-white hover:bg-[#4a5fd9] transition-colors">
-                Join the Waitlist
-              </button>
-              <button className="flex items-center justify-center rounded-xl border border-white/20 px-6 h-10 text-sm font-bold text-white hover:bg-white/10 transition-colors">
+              <a 
+                href="https://docs.google.com/forms/d/e/1FAIpQLSf-wjxSr_W28XG-Y9XRfsqyTvxv7vSemHjHkK6SJ7B492JQrA/viewform?usp=header"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex items-center justify-center rounded-xl bg-[#607afb] px-6 h-10 text-sm font-bold text-white hover:bg-[#4a5fd9] transition-colors"
+              >
+                Take Survey
+              </a>
+              <Link 
+                to="/features"
+                className="flex items-center justify-center rounded-xl border border-white/20 px-6 h-10 text-sm font-bold text-white hover:bg-white/10 transition-colors"
+              >
                 Learn More
-              </button>
+              </Link>
             </div>
           </div>
           <div className="flex-1">

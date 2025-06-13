@@ -1,14 +1,6 @@
-import React, { useState } from 'react';
+import React from 'react';
 
 const Subscribe = () => {
-  const [email, setEmail] = useState('');
-
-  const handleSubmit = (e: React.FormEvent) => {
-    e.preventDefault();
-    // Handle email subscription logic here
-    console.log('Subscribing email:', email);
-  };
-
   return (
     <div className="w-full px-4 sm:px-6 lg:px-8">
       <div className="max-w-[1920px] mx-auto">
@@ -25,27 +17,16 @@ const Subscribe = () => {
               </p>
             </div>
 
-            <form onSubmit={handleSubmit} className="mt-6 max-w-xl mx-auto">
-              <div className="flex flex-col sm:flex-row gap-3">
-                <input
-                  type="email"
-                  placeholder="Enter your email"
-                  value={email}
-                  onChange={(e) => setEmail(e.target.value)}
-                  className="flex-1 min-w-0 px-4 h-10 rounded-xl bg-white/10 border border-white/20 text-white placeholder:text-white/50 focus:outline-none focus:ring-2 focus:ring-[#607afb] focus:border-transparent transition-all text-sm"
-                />
-                <button
-                  type="submit"
-                  className="px-6 h-10 rounded-xl bg-[#607afb] text-white font-bold hover:bg-[#4a5fd9] transition-colors whitespace-nowrap text-sm"
-                >
-                  Get early access
-                </button>
-              </div>
-            </form>
-
-            <p className="text-center text-white/60 text-xs mt-3">
-              By subscribing, you agree to our Terms of Service and Privacy Policy.
-            </p>
+            <div className="mt-6 max-w-xl mx-auto flex justify-center">
+              <a
+                href="https://docs.google.com/forms/d/e/1FAIpQLSf4f3q0tyvL9Iy5oIJO0cStf6yaqKm3bEjnXvoerlLb2qo6Hg/viewform?usp=header"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="px-6 h-10 rounded-xl bg-[#607afb] text-white font-bold hover:bg-[#4a5fd9] transition-colors whitespace-nowrap text-sm flex items-center justify-center"
+              >
+                Get Early Access
+              </a>
+            </div>
           </div>
         </div>
       </div>

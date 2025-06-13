@@ -23,9 +23,14 @@ export default function Header() {
             <Link to="/about" className="text-white text-sm font-medium hover:text-[#607afb] transition-colors">About</Link>
             <Link to="/features" className="text-white text-sm font-medium hover:text-[#607afb] transition-colors">Features</Link>
             <Link to="/contact" className="text-white text-sm font-medium hover:text-[#607afb] transition-colors">Contact</Link>
-            <button className="rounded-xl bg-[#607afb] px-6 h-10 text-sm font-bold text-white hover:bg-[#4a5fd9] transition-colors">
-              I'm Interested
-            </button>
+            <a 
+              href="https://docs.google.com/forms/d/e/1FAIpQLSf-wjxSr_W28XG-Y9XRfsqyTvxv7vSemHjHkK6SJ7B492JQrA/viewform?usp=header"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-white text-sm font-medium hover:text-[#607afb] transition-colors"
+            >
+              Give Your Opinion
+            </a>
           </nav>
 
           {/* Mobile menu button */}
@@ -51,9 +56,14 @@ export default function Header() {
               <Link to="/about" className="block px-3 py-2 text-white text-sm font-medium hover:text-[#607afb] transition-colors">About</Link>
               <Link to="/features" className="block px-3 py-2 text-white text-sm font-medium hover:text-[#607afb] transition-colors">Features</Link>
               <Link to="/contact" className="block px-3 py-2 text-white text-sm font-medium hover:text-[#607afb] transition-colors">Contact</Link>
-              <button className="w-full mt-2 rounded-xl bg-[#607afb] px-6 h-10 text-sm font-bold text-white hover:bg-[#4a5fd9] transition-colors">
-                I'm Interested
-              </button>
+              <a 
+                href="https://docs.google.com/forms/d/e/1FAIpQLSf-wjxSr_W28XG-Y9XRfsqyTvxv7vSemHjHkK6SJ7B492JQrA/viewform?usp=header"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="block px-3 py-2 text-white text-sm font-medium hover:text-[#607afb] transition-colors"
+              >
+                Give Your Opinion
+              </a>
             </div>
           </div>
         )}

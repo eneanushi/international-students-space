@@ -189,7 +189,7 @@ const Contact: React.FC = () => {
             transition={{ duration: 0.6, delay: 0.8 }}
           >
             <h3>Social Media</h3>
-            <p>@Comming Soon</p>
+            <p>@Coming Soon</p>
           </ContactCard>
         </ContactInfo>
       </Section>

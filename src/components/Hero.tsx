@@ -24,10 +24,10 @@ const Hero = () => {
                 Take Survey
               </a>
               <Link 
-                to="/features"
+                to="/space"
                 className="flex items-center justify-center rounded-xl border border-white/20 px-6 h-10 text-sm font-bold text-white hover:bg-white/10 transition-colors"
               >
-                Learn More
+                Visit International Student Space
               </Link>
             </div>
           </div>

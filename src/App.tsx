@@ -16,6 +16,7 @@ import Footer from './components/Footer';
 import Space from './components/Space';
 import PrivacyPolicy from './components/PrivacyPolicy';
 import ConsentModal from './components/ConsentModal';
+import Roadmap from './components/Roadmap';
 
 function Home() {
   const [showConsentModal, setShowConsentModal] = useState(true); // Show immediately
@@ -81,6 +82,7 @@ function App() {
               <Route path="/contact" element={<Contact />} />
               <Route path="/space" element={<Space />} />
               <Route path="/privacy" element={<PrivacyPolicy />} />
+              <Route path="/roadmap" element={<Roadmap />} />
             </Routes>
           </main>
           <Footer />

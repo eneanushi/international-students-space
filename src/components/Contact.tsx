@@ -189,8 +189,8 @@ const Contact: React.FC = () => {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.4 }}
           >
-            <h3>Email</h3>
-            <p>enea_nushi@student.uml.edu</p>
+            <h3>Agent Phone Number</h3>
+            <p>Coming Soon</p>
           </ContactCard>
 
           <ContactCard

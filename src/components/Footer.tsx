@@ -54,9 +54,14 @@ const Footer = () => {
             <h3 className="text-lg font-semibold mb-4 bg-gradient-to-r from-white to-white/80 bg-clip-text text-transparent">Resources</h3>
             <ul className="space-y-3">
               {['Visa Guide', 'Scholarships', 'Internship Tips', 'Mental Health'].map((item) => (
-                <li key={item} className="flex items-center justify-between">
-                  <span className="text-white/60 text-sm">{item}</span>
-                  <span className="text-xs px-2 py-1 rounded-full bg-[#607afb]/10 text-[#607afb]">Coming Soon</span>
+                <li key={item}>
+                  <Link 
+                    to="/space" 
+                    className="text-white/60 hover:text-[#607afb] transition-colors text-sm flex items-center gap-2 group"
+                  >
+                    <span className="w-1 h-1 rounded-full bg-[#607afb] opacity-0 group-hover:opacity-100 transition-opacity"></span>
+                    {item}
+                  </Link>
                 </li>
               ))}
             </ul>

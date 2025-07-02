@@ -139,6 +139,12 @@ const About: React.FC = () => {
   });
 
   useEffect(() => {
+    // Ensure the component is properly mounted and visible
+    console.log('About component mounted');
+    
+    // Scroll to top when component mounts
+    window.scrollTo(0, 0);
+    
     // Add floating elements
     const elements = ['passport', 'document', 'globe'];
     elements.forEach((element) => {
@@ -172,7 +178,7 @@ const About: React.FC = () => {
       
       <Section
         initial={{ opacity: 0, y: 50 }}
-        whileInView={{ opacity: 1, y: 0 }}
+        animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.8 }}
       >
         <Title
@@ -184,14 +190,14 @@ const About: React.FC = () => {
         </Title>
         <Subtitle
           initial={{ opacity: 0, x: -20 }}
-          whileInView={{ opacity: 1, x: 0 }}
+          animate={{ opacity: 1, x: 0 }}
           transition={{ duration: 0.6, delay: 0.4 }}
         >
           Our Mission
         </Subtitle>
         <Text
           initial={{ opacity: 0 }}
-          whileInView={{ opacity: 1 }}
+          animate={{ opacity: 1 }}
           transition={{ duration: 0.6, delay: 0.6 }}
         >
           Empowering international students to succeed in the U.S. through <Highlight>personalized AI guidance</Highlight>.
@@ -201,19 +207,19 @@ const About: React.FC = () => {
 
       <Section
         initial={{ opacity: 0, y: 50 }}
-        whileInView={{ opacity: 1, y: 0 }}
+        animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.8, delay: 0.2 }}
       >
         <Subtitle
           initial={{ opacity: 0, x: -20 }}
-          whileInView={{ opacity: 1, x: 0 }}
+          animate={{ opacity: 1, x: 0 }}
           transition={{ duration: 0.6, delay: 0.4 }}
         >
           Our Story
         </Subtitle>
         <Text
           initial={{ opacity: 0 }}
-          whileInView={{ opacity: 1 }}
+          animate={{ opacity: 1 }}
           transition={{ duration: 0.6, delay: 0.6 }}
         >
           Born from personal experience, AgentX Navigator was created by an international student
@@ -224,19 +230,19 @@ const About: React.FC = () => {
 
       <Section
         initial={{ opacity: 0, y: 50 }}
-        whileInView={{ opacity: 1, y: 0 }}
+        animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.8, delay: 0.4 }}
       >
         <Subtitle
           initial={{ opacity: 0, x: -20 }}
-          whileInView={{ opacity: 1, x: 0 }}
+          animate={{ opacity: 1, x: 0 }}
           transition={{ duration: 0.6, delay: 0.4 }}
         >
           Why It Matters
         </Subtitle>
         <Text
           initial={{ opacity: 0 }}
-          whileInView={{ opacity: 1 }}
+          animate={{ opacity: 1 }}
           transition={{ duration: 0.6, delay: 0.6 }}
         >
           Navigating <Highlight>CPT/OPT requirements</Highlight>, finding scholarships, and securing internships

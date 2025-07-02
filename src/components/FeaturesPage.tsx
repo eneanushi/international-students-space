@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { motion } from 'framer-motion';
 import styled from '@emotion/styled';
 
@@ -171,6 +171,14 @@ const features = [
 ];
 
 const FeaturesPage: React.FC = () => {
+  useEffect(() => {
+    // Ensure the component is properly mounted and visible
+    console.log('FeaturesPage component mounted');
+    
+    // Scroll to top when component mounts
+    window.scrollTo(0, 0);
+  }, []);
+
   return (
     <FeaturesContainer>
       <Title
@@ -185,7 +193,7 @@ const FeaturesPage: React.FC = () => {
           <FeatureCard
             key={feature.title}
             initial={{ opacity: 0, y: 50 }}
-            whileInView={{ opacity: 1, y: 0 }}
+            animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5, delay: index * 0.1 }}
             whileHover={{ scale: 1.02 }}
           >

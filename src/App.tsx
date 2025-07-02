@@ -12,6 +12,7 @@ import About from './components/About';
 import FeaturesPage from './components/FeaturesPage';
 import Contact from './components/Contact';
 import Footer from './components/Footer';
+import Space from './components/Space';
 
 function Home() {
   return (
@@ -49,6 +50,7 @@ function App() {
               <Route path="/about" element={<About />} />
               <Route path="/features" element={<FeaturesPage />} />
               <Route path="/contact" element={<Contact />} />
+              <Route path="/space" element={<Space />} />
             </Routes>
           </main>
           <Footer />

@@ -1,4 +1,5 @@
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'
+import { useState } from 'react'
 import './App.css'
 
 import Header from './components/Header';
@@ -13,17 +14,52 @@ import FeaturesPage from './components/FeaturesPage';
 import Contact from './components/Contact';
 import Footer from './components/Footer';
 import Space from './components/Space';
+import PrivacyPolicy from './components/PrivacyPolicy';
+import ConsentModal from './components/ConsentModal';
 
 function Home() {
+  const [showConsentModal, setShowConsentModal] = useState(false);
+  const [showMainContent, setShowMainContent] = useState(false);
+
+  const handleOpeningComplete = () => {
+    // Check if user has already accepted the consent
+    const hasAcceptedConsent = localStorage.getItem('consentAccepted');
+    
+    if (hasAcceptedConsent === 'true') {
+      // User has already accepted, show main content directly
+      setShowMainContent(true);
+    } else {
+      // First time user, show consent modal
+      setShowConsentModal(true);
+    }
+  };
+
+  const handleConsentAccept = () => {
+    // Save consent acceptance to localStorage
+    localStorage.setItem('consentAccepted', 'true');
+    setShowConsentModal(false);
+    setShowMainContent(true);
+  };
+
   return (
     <>
-      <OpeningEffect />
-      <div className="space-y-8">
-        <Hero />
-        <Timeline />
-        <Features />
-        <Subscribe />
-      </div>
+      <OpeningEffect onComplete={handleOpeningComplete} />
+      
+      {/* Consent Modal */}
+      <ConsentModal 
+        isVisible={showConsentModal} 
+        onAccept={handleConsentAccept} 
+      />
+      
+      {/* Main Content - only show after consent */}
+      {showMainContent && (
+        <div className="space-y-8">
+          <Hero />
+          <Timeline />
+          <Features />
+          <Subscribe />
+        </div>
+      )}
     </>
   );
 }
@@ -51,6 +87,7 @@ function App() {
               <Route path="/features" element={<FeaturesPage />} />
               <Route path="/contact" element={<Contact />} />
               <Route path="/space" element={<Space />} />
+              <Route path="/privacy" element={<PrivacyPolicy />} />
             </Routes>
           </main>
           <Footer />

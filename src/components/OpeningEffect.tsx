@@ -6,13 +6,23 @@ const auroraColors = [
   '#FF3232', // red
 ];
 
-const OpeningEffect: React.FC = () => {
+interface OpeningEffectProps {
+  onComplete?: () => void;
+}
+
+const OpeningEffect: React.FC<OpeningEffectProps> = ({ onComplete }) => {
   const [hide, setHide] = useState(false);
 
   useEffect(() => {
-    const timeout = setTimeout(() => setHide(true), 1600); // 1.6s effect
+    const timeout = setTimeout(() => {
+      setHide(true);
+      // Call the onComplete callback after the animation finishes
+      if (onComplete) {
+        setTimeout(onComplete, 1000); // Wait for the fade-out animation to complete
+      }
+    }, 1600); // 1.6s effect
     return () => clearTimeout(timeout);
-  }, []);
+  }, [onComplete]);
 
   return (
     <div

@@ -1,4 +1,4 @@
-import { useRef } from 'react';
+import { useRef, useEffect } from 'react';
 import { motion } from 'framer-motion';
 import styled from '@emotion/styled';
 
@@ -11,6 +11,8 @@ const ContactContainer = styled.div`
   position: relative;
   overflow: hidden;
   z-index: 1;
+  display: block !important;
+  opacity: 1 !important;
 `;
 
 const Section = styled(motion.section)`
@@ -118,6 +120,23 @@ const ContactCard = styled(motion.div)`
 const Contact: React.FC = () => {
   const containerRef = useRef<HTMLDivElement>(null);
 
+  useEffect(() => {
+    // Ensure the component is properly mounted and visible
+    console.log('Contact component mounted');
+    
+    // Scroll to top when component mounts
+    window.scrollTo(0, 0);
+    
+    // Force a re-render if needed
+    const timer = setTimeout(() => {
+      if (containerRef.current) {
+        containerRef.current.style.display = 'block';
+      }
+    }, 100);
+    
+    return () => clearTimeout(timer);
+  }, []);
+
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     // Add your form submission logic here
@@ -128,7 +147,7 @@ const Contact: React.FC = () => {
     <ContactContainer ref={containerRef}>
       <Section
         initial={{ opacity: 0, y: 50 }}
-        whileInView={{ opacity: 1, y: 0 }}
+        animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.8 }}
       >
         <Title
@@ -167,7 +186,7 @@ const Contact: React.FC = () => {
         <ContactInfo>
           <ContactCard
             initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
+            animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.4 }}
           >
             <h3>Email</h3>
@@ -176,7 +195,7 @@ const Contact: React.FC = () => {
 
           <ContactCard
             initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
+            animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.6 }}
           >
             <h3>Location</h3>
@@ -185,7 +204,7 @@ const Contact: React.FC = () => {
 
           <ContactCard
             initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
+            animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.8 }}
           >
             <h3>Social Media</h3>

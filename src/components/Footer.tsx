@@ -37,6 +37,15 @@ const Footer = () => {
                   </Link>
                 </li>
               ))}
+              <li>
+                <Link 
+                  to="/privacy" 
+                  className="text-white/60 hover:text-[#607afb] transition-colors text-sm flex items-center gap-2 group"
+                >
+                  <span className="w-1 h-1 rounded-full bg-[#607afb] opacity-0 group-hover:opacity-100 transition-opacity"></span>
+                  Privacy Policy
+                </Link>
+              </li>
             </ul>
           </div>
 

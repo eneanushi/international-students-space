@@ -1,5 +1,6 @@
 import React, { useState, useRef, useEffect } from 'react';
 import './Space.css';
+import ConsentModal from './ConsentModal';
 
 // Topic data with unique information for each card
 const topicData = [
@@ -997,6 +998,10 @@ const Space: React.FC = () => {
   const [roadmapType, setRoadmapType] = useState<string>('');
   const [connections, setConnections] = useState<Array<{from: number, to: number}>>([]);
   const circlesRef = useRef<HTMLDivElement>(null);
+  
+  // Consent modal state
+  const [showConsentModal, setShowConsentModal] = useState(true);
+  const [showSpaceContent, setShowSpaceContent] = useState(false);
 
   // Generate web-like connections
   useEffect(() => {
@@ -1034,7 +1039,21 @@ const Space: React.FC = () => {
     setRoadmapType('');
   };
 
+  const handleConsentAccept = () => {
+    setShowConsentModal(false);
+    setShowSpaceContent(true);
+  };
+
   return (
+    <>
+      {/* Consent Modal - shows first */}
+      <ConsentModal 
+        isVisible={showConsentModal} 
+        onAccept={handleConsentAccept} 
+      />
+      
+      {/* Space Content - only show after consent */}
+      {showSpaceContent && (
     <div className="space-container">
       {/* Animated background */}
       <div className="space-background">
@@ -1102,6 +1121,8 @@ const Space: React.FC = () => {
         roadmapType={roadmapType}
       />
     </div>
+      )}
+    </>
   );
 };
 

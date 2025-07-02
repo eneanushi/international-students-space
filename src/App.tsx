@@ -18,40 +18,33 @@ import PrivacyPolicy from './components/PrivacyPolicy';
 import ConsentModal from './components/ConsentModal';
 
 function Home() {
-  const [showConsentModal, setShowConsentModal] = useState(false);
+  const [showConsentModal, setShowConsentModal] = useState(true); // Show immediately
+  const [showOpeningAnimation, setShowOpeningAnimation] = useState(false);
   const [showMainContent, setShowMainContent] = useState(false);
 
-  const handleOpeningComplete = () => {
-    // Check if user has already accepted the consent
-    const hasAcceptedConsent = localStorage.getItem('consentAccepted');
-    
-    if (hasAcceptedConsent === 'true') {
-      // User has already accepted, show main content directly
-      setShowMainContent(true);
-    } else {
-      // First time user, show consent modal
-      setShowConsentModal(true);
-    }
+  const handleConsentAccept = () => {
+    setShowConsentModal(false);
+    setShowOpeningAnimation(true);
   };
 
-  const handleConsentAccept = () => {
-    // Save consent acceptance to localStorage
-    localStorage.setItem('consentAccepted', 'true');
-    setShowConsentModal(false);
+  const handleOpeningComplete = () => {
     setShowMainContent(true);
   };
 
   return (
     <>
-      <OpeningEffect onComplete={handleOpeningComplete} />
-      
-      {/* Consent Modal */}
+      {/* Consent Modal - shows first */}
       <ConsentModal 
         isVisible={showConsentModal} 
         onAccept={handleConsentAccept} 
       />
       
-      {/* Main Content - only show after consent */}
+      {/* Opening Animation - shows after consent */}
+      {showOpeningAnimation && (
+        <OpeningEffect onComplete={handleOpeningComplete} />
+      )}
+      
+      {/* Main Content - only show after opening animation */}
       {showMainContent && (
         <div className="space-y-8">
           <Hero />

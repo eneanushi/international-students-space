@@ -20,32 +20,40 @@ const Footer = () => {
             <p className="text-white/60 text-sm leading-relaxed">
               Empowering international students to succeed in the U.S. through personalized AI guidance.
             </p>
+            
+            {/* Motto Section */}
+            <div className="bg-gradient-to-r from-[#607afb]/10 to-[#ff6b6b]/10 border-l-4 border-[#607afb] p-3 rounded-r-lg">
+              <p className="text-white/80 text-sm italic">
+                Remember: <span className="font-bold text-[#607afb]">early</span> is on time,{' '}
+                <span className="font-bold text-[#607afb]">on time</span> is late, and{' '}
+                <span className="font-bold text-[#ff6b6b]">late</span> is unacceptable.
+              </p>
+            </div>
           </div>
 
           {/* Quick Links */}
           <div>
             <h3 className="text-lg font-semibold mb-4 bg-gradient-to-r from-white to-white/80 bg-clip-text text-transparent">Quick Links</h3>
             <ul className="space-y-3">
-              {['Home', 'About', 'Features', 'Contact'].map((item) => (
-                <li key={item}>
+              {[
+                { name: 'Home', path: '/' },
+                { name: 'About', path: '/about' },
+                { name: 'Features', path: '/features' },
+                { name: 'Students Space', path: '/space' },
+                { name: 'Roadmap', path: '/roadmap' },
+                { name: 'Contact', path: '/contact' },
+                { name: 'Privacy Policy', path: '/privacy' }
+              ].map((item) => (
+                <li key={item.name}>
                   <Link 
-                    to={item === 'Home' ? '/' : `/${item.toLowerCase()}`} 
+                    to={item.path} 
                     className="text-white/60 hover:text-[#607afb] transition-colors text-sm flex items-center gap-2 group"
                   >
                     <span className="w-1 h-1 rounded-full bg-[#607afb] opacity-0 group-hover:opacity-100 transition-opacity"></span>
-                    {item}
+                    {item.name}
                   </Link>
                 </li>
               ))}
-              <li>
-                <Link 
-                  to="/privacy" 
-                  className="text-white/60 hover:text-[#607afb] transition-colors text-sm flex items-center gap-2 group"
-                >
-                  <span className="w-1 h-1 rounded-full bg-[#607afb] opacity-0 group-hover:opacity-100 transition-opacity"></span>
-                  Privacy Policy
-                </Link>
-              </li>
             </ul>
           </div>
 
@@ -53,14 +61,23 @@ const Footer = () => {
           <div>
             <h3 className="text-lg font-semibold mb-4 bg-gradient-to-r from-white to-white/80 bg-clip-text text-transparent">Resources</h3>
             <ul className="space-y-3">
-              {['Visa Guide', 'Scholarships', 'Internship Tips', 'Mental Health'].map((item) => (
-                <li key={item}>
+              {[
+                { name: 'Visa Guide', icon: '🛂' },
+                { name: 'Scholarships', icon: '💰' },
+                { name: 'Internship Tips', icon: '💼' },
+                { name: 'Mental Health', icon: '🧠' },
+                { name: 'Housing Guide', icon: '🏠' },
+                { name: 'Academic Tips', icon: '📚' },
+                { name: 'Clubs & Community', icon: '👥' }
+              ].map((item) => (
+                <li key={item.name}>
                   <Link 
                     to="/space" 
                     className="text-white/60 hover:text-[#607afb] transition-colors text-sm flex items-center gap-2 group"
                   >
                     <span className="w-1 h-1 rounded-full bg-[#607afb] opacity-0 group-hover:opacity-100 transition-opacity"></span>
-                    {item}
+                    <span className="text-base">{item.icon}</span>
+                    {item.name}
                   </Link>
                 </li>
               ))}

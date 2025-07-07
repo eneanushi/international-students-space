@@ -89,7 +89,6 @@ const ConsentModal: React.FC<ConsentModalProps> = ({ isVisible, onAccept }) => {
                 I accept and agree to the{' '}
                 <Link 
                   to="/privacy" 
-                  target="_blank"
                   className="text-[#607afb] hover:text-[#4c63d2] underline transition-colors"
                 >
                   Privacy Policy
